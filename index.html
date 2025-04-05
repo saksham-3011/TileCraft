@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TileCraft - Premium Designer Tiles for Every Space</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-container">
+    <div class="logo">
+      <a href="index.html">TileCraft</a>
+    </div>
+
+    <nav class="main-navigation" aria-label="Main Navigation">
+      <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+        <span class="sr-only">Menu</span>
+        <i class="fas fa-bars hamburger-icon"></i>
+      </button>
+      <ul id="primary-navigation" class="nav-list">
+        <li class="nav-item dropdown">
+          <a href="shop.html" class="nav-link">Products <i class="fas fa-chevron-down fa-xs"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="shop-all.html">All Tiles</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a href="category-floor.html">Floor Tiles</a></li>
+            <li><a href="category-wall.html">Wall Tiles</a></li>
+            <li><a href="category-mosaic.html">Mosaics</a></li>
+            <li><a href="category-outdoor.html">Outdoor</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="inspiration.html" class="nav-link">Inspiration</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="search-toggle" aria-label="Search"><i class="fas fa-search"></i></button>
+      <a href="account.html" class="action-link" aria-label="My Account"><i class="fas fa-user"></i></a>
+      <a href="cart.html" class="action-link" aria-label="Shopping Cart"><i class="fas fa-shopping-bag"></i><span class="cart-count" aria-hidden="true">0</span></a>
+    </div>
+
+    <div class="search-bar">
+      <form action="/search" method="get">
+        <input type="search" name="query" placeholder="Search tiles..." aria-label="Search tiles" />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Transform Your Space with Timeless Tiles</h1>
+      <p>Browse our curated collection of designer tiles — perfect for floors, walls, kitchens, and beyond.</p>
+      <a href="shop-all.html" class="btn btn-primary btn-lg">Shop All Tiles</a>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories-showcase section-padding">
+    <div class="container">
+      <h2 class="section-title text-center">Shop by Category</h2>
+      <div class="category-grid">
+        <a href="category-floor.html" class="category-card">
+          <img src="https://nexiontiles.com/wp-content/uploads/2021/06/Nexion-RUNA-GRIGIO-CHIARO-5.jpg" alt="Floor Tiles" />
+          <h3>Floor Tiles</h3>
+        </a>
+        <a href="category-wall.html" class="category-card">
+          <img src="https://nexiontiles.com/wp-content/uploads/2024/06/Nexion_Marquinia-Intenso_F1.jpeg" alt="Wall Tiles" />
+          <h3>Wall Tiles</h3>
+        </a>
+        <a href="category-mosaic.html" class="category-card">
+          <img src="https://nexiontiles.com/wp-content/uploads/2021/06/antique-black-naturale.jpg" alt="Mosaic Tiles" />
+          <h3>Mosaics</h3>
+        </a>
+        <a href="category-outdoor.html" class="category-card">
+          <img src="https://nexiontiles.com/wp-content/uploads/2024/06/Nexion_RIGA-BEIGE_F3_RIGATO-1.jpg" alt="Outdoor Tiles" />
+          <h3>Outdoor Tiles</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Tiles -->
+  <section class="featured-products section-padding bg-medium">
+    <div class="container">
+      <h2 class="section-title text-center">New Arrivals</h2>
+      <div class="product-grid">
+
+        <article class="product-card">
+          <a href="product-detail.html" class="product-link">
+            <img src="https://nexiontiles.com/wp-content/uploads/2022/09/gabbro_sfumato_minimale.jpg" alt="Matte Finish Grey Tile" class="product-image" />
+            <div class="product-info">
+              <h3 class="product-title">Matte Finish Grey Tile</h3>
+              <p class="product-price">$3.50 / sq. ft</p>
+            </div>
+          </a>
+          <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="1">Add to Cart</button>
+        </article>
+        
+        <article class="product-card">
+            <a href="product-detail.html" class="product-link">
+              <img src="https://nexiontiles.com/wp-content/uploads/2021/06/rosso-levanto-naturale.jpg" alt="Red Marble Rosso Levanto" class="product-image" />
+              <div class="product-info">
+                <h3 class="product-title">Red Marble Rosso Levanto</h3>
+                <p class="product-price">$4.66 / sq. ft</p>
+              </div>
+            </a>
+            <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="2">Add to Cart</button>
+          </article>
+
+        <article class="product-card">
+          <a href="product-detail.html" class="product-link">
+            <img src="https://nexiontiles.com/wp-content/uploads/2022/09/signature_quarzo_verde_acqua_minimale.jpg" alt="Green Marble Verde Aqua" class="product-image" />
+            <div class="product-info">
+              <h3 class="product-title">Green Marble Verde Aqua</h3>
+              <p class="product-price">$2.80 / sq. ft</p>
+            </div>
+          </a>
+          <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="3">Add to Cart</button>
+        </article>
+
+        <article class="product-card">
+            <a href="product-detail.html" class="product-link">
+              <img src="https://nexiontiles.com/wp-content/uploads/2021/04/statuario-naturale-1.jpg" alt="Glossy White Subway Tile" class="product-image" />
+              <div class="product-info">
+                <h3 class="product-title">Glossy White Subway Tile</h3>
+                <p class="product-price">$2.80 / sq. ft</p>
+              </div>
+            </a>
+            <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="4">Add to Cart</button>
+          </article>
+
+        <article class="product-card">
+          <a href="product-detail.html" class="product-link">
+            <img src="https://nexiontiles.com/wp-content/uploads/2021/06/runa-black.jpg" alt="Outdoor Textured Stone" class="product-image" />
+            <div class="product-info">
+              <h3 class="product-title">Outdoor Textured Stone</h3>
+              <p class="product-price">$4.25 / sq. ft</p>
+            </div>
+          </a>
+          <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="5">Add to Cart</button>
+        </article>
+
+        <article class="product-card">
+          <a href="product-detail.html" class="product-link">
+            <img src="https://nexiontiles.com/wp-content/uploads/2021/06/terraelino_ginepro.jpg" alt="Blue Mosaic Accent Tile" class="product-image" />
+            <div class="product-info">
+              <h3 class="product-title">Blue Mosaic Accent Tile</h3>
+              <p class="product-price">$5.60 / sq. ft</p>
+            </div>
+          </a>
+          <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="6">Add to Cart</button>
+        </article>
+
+        
+
+      </div>
+      <div class="text-center view-all-link">
+        <a href="shop-all.html" class="btn btn-outline">View All Tiles</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Story -->
+  <section class="mission-spotlight section-padding">
+    <div class="container mission-container">
+      <div class="mission-image">
+        <img src="https://nexiontiles.com/wp-content/uploads/2021/06/essenze_eucalipto-1.jpg" alt="Beautiful tiled interior" />
+      </div>
+      <div class="mission-text">
+        <h2 class="section-title">Design. Quality. Durability.</h2>
+        <p>At TileCraft, we bring you premium tiles that combine style and strength — perfect for modern interiors, commercial projects, and home makeovers.</p>
+        <p>Explore textures, colors, and finishes that transform spaces.</p>
+        <a href="about.html" class="btn btn-primary">Learn More About Us</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="site-footer section-padding">
+  <div class="container footer-container">
+    <div class="footer-column about-column">
+      <h4 class="footer-heading">TileCraft</h4>
+      <p>Your destination for high-quality tiles crafted for beauty and endurance.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-column links-column">
+      <h4 class="footer-heading">Quick Links</h4>
+      <ul class="footer-list">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="shop-all.html">Shop Tiles</a></li>
+        <li><a href="inspiration.html">Inspiration Gallery</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="sell-with-us.html">Sell With Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column links-column">
+      <h4 class="footer-heading">Customer Service</h4>
+      <ul class="footer-list">
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="shipping.html">Shipping & Returns</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms & Conditions</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column newsletter-column">
+      <h4 class="footer-heading">Stay Updated</h4>
+      <p>Get design tips, new arrivals & exclusive offers in your inbox.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" aria-label="Email address" />
+        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="container copyright-container">
+    <p class="copyright-text">© <span id="current-year"></span> TileCraft. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script src="pp33.js"></script>
+</body>
+</html>
