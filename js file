@@ -1,0 +1,349 @@
+document.addEventListener('DOMContentLoaded', () => {
+
+    console.log("TileCraft Script Loaded");
+
+    // --- 1. Mobile Navigation Toggle ---
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const primaryNavigation = document.getElementById('primary-navigation');
+    const hamburgerIcon = document.querySelector('.hamburger-icon'); // Get the icon itself
+
+    if (mobileNavToggle && primaryNavigation && hamburgerIcon) {
+        mobileNavToggle.addEventListener('click', () => {
+            const isExpanded = primaryNavigation.classList.toggle('active');
+            mobileNavToggle.setAttribute('aria-expanded', isExpanded);
+
+            // Toggle icon class
+            if (isExpanded) {
+                hamburgerIcon.classList.remove('fa-bars');
+                hamburgerIcon.classList.add('fa-times'); // Change to close icon
+            } else {
+                hamburgerIcon.classList.remove('fa-times');
+                hamburgerIcon.classList.add('fa-bars'); // Change back to hamburger
+                 // Close any open submenus when main menu closes
+                closeAllMobileSubmenus();
+            }
+        });
+    } else {
+        console.warn("Mobile navigation elements not found.");
+    }
+
+    // --- 2. Mobile Submenu Toggle ---
+    const mobileDropdownToggles = document.querySelectorAll('#primary-navigation .nav-item.dropdown > .nav-link');
+
+    mobileDropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            // Only prevent default and toggle on smaller screens where mobile nav is active
+            if (window.innerWidth <= 992 && primaryNavigation.classList.contains('active')) {
+                e.preventDefault(); // Prevent link navigation only for dropdown toggle
+                const parentDropdown = toggle.closest('.nav-item.dropdown');
+                if (parentDropdown) {
+                    // Close other open submenus before opening a new one
+                    if (!parentDropdown.classList.contains('open')) {
+                        closeAllMobileSubmenus();
+                    }
+                    parentDropdown.classList.toggle('open');
+                }
+            }
+            // Allow default link behavior on larger screens or if not a dropdown link
+        });
+    });
+
+    function closeAllMobileSubmenus() {
+        document.querySelectorAll('#primary-navigation .nav-item.dropdown.open').forEach(openDropdown => {
+            openDropdown.classList.remove('open');
+        });
+    }
+
+    // Close mobile nav if user clicks outside of it (optional but good UX)
+    document.addEventListener('click', (event) => {
+        if (primaryNavigation && primaryNavigation.classList.contains('active')) {
+            const isClickInsideNav = primaryNavigation.contains(event.target);
+            const isClickOnToggle = mobileNavToggle.contains(event.target);
+
+            if (!isClickInsideNav && !isClickOnToggle) {
+                primaryNavigation.classList.remove('active');
+                mobileNavToggle.setAttribute('aria-expanded', 'false');
+                hamburgerIcon.classList.remove('fa-times');
+                hamburgerIcon.classList.add('fa-bars');
+                closeAllMobileSubmenus(); // Also close submenus
+            }
+        }
+    });
+
+
+    // --- 3. Search Bar Toggle ---
+    const searchToggle = document.querySelector('.search-toggle');
+    const searchBar = document.querySelector('.search-bar');
+    const searchInput = searchBar ? searchBar.querySelector('input[type="search"]') : null;
+
+    if (searchToggle && searchBar) {
+        searchToggle.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent document click listener from closing it immediately
+            searchBar.classList.toggle('active');
+            if (searchBar.classList.contains('active') && searchInput) {
+                searchInput.focus(); // Focus input when opening
+            }
+        });
+
+        // Close search bar if clicking outside
+        document.addEventListener('click', (event) => {
+            if (searchBar.classList.contains('active')) {
+                const isClickInsideSearch = searchBar.contains(event.target);
+                // Check if the click was on the toggle itself
+                const isClickOnToggle = searchToggle.contains(event.target);
+
+                if (!isClickInsideSearch && !isClickOnToggle) {
+                    searchBar.classList.remove('active');
+                }
+            }
+        });
+         // Prevent clicks inside search bar from closing it
+        searchBar.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+
+
+    } else {
+        console.warn("Search toggle or search bar elements not found.");
+    }
+
+
+    // --- 4. Sticky Header Class (Optional Enhancement) ---
+    const siteHeader = document.querySelector('.site-header');
+    if (siteHeader) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { // Add class after scrolling 50px
+                siteHeader.classList.add('scrolled');
+            } else {
+                siteHeader.classList.remove('scrolled');
+            }
+        });
+        // You would then add styles in CSS for .site-header.scrolled
+        // e.g., background-color, smaller padding, different shadow etc.
+    }
+
+    // --- 5. "Add to Cart" Button Simulation ---
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+    const cartCountElement = document.querySelector('.cart-count');
+    let cartItemCount = cartCountElement ? parseInt(cartCountElement.textContent || '0') : 0; // Start with current count
+
+    if (cartCountElement) {
+         // Ensure count is displayed if > 0 initially
+         cartCountElement.style.display = cartItemCount > 0 ? 'flex' : 'none';
+    }
+
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const productId = button.dataset.productId; // Get product ID if needed later
+            console.log(Adding product ${productId} to cart (simulation));
+
+            // Increment count
+            cartItemCount++;
+
+            // Update cart count display
+            if (cartCountElement) {
+                cartCountElement.textContent = cartItemCount;
+                cartCountElement.style.display = 'flex'; // Make sure it's visible
+
+                 // Optional: Add a little animation
+                 cartCountElement.classList.add('updated');
+                 setTimeout(() => cartCountElement.classList.remove('updated'), 300); // Remove class after animation
+            }
+
+            // Change button text temporarily (optional feedback)
+            const originalText = button.textContent;
+            button.textContent = 'Added!';
+            button.disabled = true; // Prevent multiple clicks quickly
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.disabled = false;
+            }, 1500); // Change back after 1.5 seconds
+
+            // In a real app, you'd send data to the server or update localStorage here
+        });
+    });
+
+     // Add CSS for the cart count update animation (optional)
+     const styleSheet = document.createElement("style");
+     styleSheet.innerText = `
+        .cart-count.updated {
+            animation: bounce 0.3s ease-in-out;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+     `;
+     document.head.appendChild(styleSheet);
+
+
+    // --- 6. Footer Year Update ---
+    const currentYearElement = document.getElementById('current-year');
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+    } else {
+        console.warn("Element with ID 'current-year' not found.");
+    }
+
+
+    // --- 7. Account Page Active Link (Simple Example based on URL) ---
+    const accountNavLinks = document.querySelectorAll('.account-nav-link');
+    if (accountNavLinks.length > 0) {
+        const currentPage = window.location.pathname; // Gets the path like '/account-orders.html'
+
+        accountNavLinks.forEach(link => {
+            const linkPath = new URL(link.href).pathname;
+             // Remove existing active classes first
+            link.classList.remove('active');
+            // Check if the link's path matches the current page's path
+            if (currentPage === linkPath || (currentPage === '/account.html' && linkPath.includes('dashboard'))) { // Basic check, make more robust if needed
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // --- 8. Quantity Input Controls (Cart Page) ---
+    // Use event delegation on the cart table for efficiency
+    const cartTable = document.querySelector('.cart-table');
+    if (cartTable) {
+        cartTable.addEventListener('click', (event) => {
+            const target = event.target;
+
+            // Check if a quantity button was clicked
+            if (target.classList.contains('qty-btn')) {
+                const quantityInputContainer = target.closest('.quantity-input');
+                if (!quantityInputContainer) return;
+
+                const input = quantityInputContainer.querySelector('input[type="number"]');
+                if (!input) return;
+
+                let currentValue = parseInt(input.value);
+                const step = parseInt(input.step) || 1;
+                const min = parseInt(input.min) || 1;
+                const max = parseInt(input.max) || 99; // Set a reasonable max
+
+                if (target.textContent === '+') {
+                    if (currentValue < max) {
+                        input.value = currentValue + step;
+                    }
+                } else if (target.textContent === '-') {
+                    if (currentValue > min) {
+                        input.value = currentValue - step;
+                    }
+                }
+                 // Trigger change event for potential updates (e.g., recalculating totals)
+                 input.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+
+            // Check if a remove button was clicked
+             if (target.classList.contains('remove-item-btn')) {
+                 handleRemoveCartItem(target);
+             }
+        });
+
+         // Add listener for direct input changes to update totals
+        cartTable.addEventListener('change', (event) => {
+            if(event.target.matches('.quantity-input input[type="number"]')) {
+                updateCartTotals(); // Recalculate totals when quantity changes
+            }
+        });
+
+         // Initial calculation on page load
+         updateCartTotals();
+
+    }
+
+    // --- 9. Remove Item from Cart (Simulation) ---
+    function handleRemoveCartItem(removeButton) {
+        const cartItemRow = removeButton.closest('tr');
+        if (cartItemRow) {
+            console.log("Removing item:", cartItemRow);
+            cartItemRow.style.opacity = '0'; // Fade out effect
+            setTimeout(() => {
+                cartItemRow.remove();
+                updateCartTotals(); // Update totals after removing
+                checkIfCartIsEmpty(); // Check if the cart is now empty
+            }, 300); // Remove after fade out
+        }
+    }
+
+    function updateCartTotals() {
+        const cartItemRows = document.querySelectorAll('.cart-table tbody tr');
+        let subtotal = 0;
+
+        cartItemRows.forEach(row => {
+            const priceElement = row.querySelector('.cart-item-price');
+            const quantityInput = row.querySelector('.quantity-input input[type="number"]');
+            const itemSubtotalElement = row.querySelector('.cart-item-subtotal');
+
+            if (priceElement && quantityInput && itemSubtotalElement) {
+                // Extract numerical price value (handle '$' and spaces)
+                const priceText = priceElement.textContent.replace(/[^0-9.]/g, '');
+                const price = parseFloat(priceText);
+                const quantity = parseInt(quantityInput.value);
+
+                if (!isNaN(price) && !isNaN(quantity)) {
+                    const itemSubtotal = price * quantity;
+                    subtotal += itemSubtotal;
+                     // Update the item's subtotal display
+                     itemSubtotalElement.textContent = $${itemSubtotal.toFixed(2)};
+                }
+            }
+        });
+
+        // --- Update Summary Section ---
+        const summarySubtotalElement = document.querySelector('.summary-row .summary-subtotal');
+        const summaryTotalElement = document.querySelector('.total-row .total-value');
+        // Assume fixed shipping or get dynamically if needed
+        const shippingCostElement = document.querySelector('.summary-row .summary-shipping');
+        let shippingCost = 0;
+        if(shippingCostElement) {
+            const shippingText = shippingCostElement.textContent.replace(/[^0-9.]/g, '');
+            shippingCost = parseFloat(shippingText) || 0;
+        }
+         // Set shipping to 0 if subtotal is 0
+         if (subtotal <= 0) {
+            shippingCost = 0;
+             if(shippingCostElement) shippingCostElement.textContent = '$0.00';
+         }
+
+
+        if (summarySubtotalElement) {
+            summarySubtotalElement.textContent = $${subtotal.toFixed(2)};
+        }
+
+        if (summaryTotalElement) {
+            const total = subtotal + shippingCost;
+            summaryTotalElement.textContent = $${total.toFixed(2)};
+        }
+         console.log(Cart totals updated: Subtotal=$${subtotal.toFixed(2)});
+    }
+
+    function checkIfCartIsEmpty() {
+        const cartItemsContainer = document.querySelector('.cart-items'); // Container for the table/items
+        const cartSummary = document.querySelector('.cart-summary');
+        const cartEmptyMessage = document.querySelector('.cart-empty'); // The empty message div
+
+        if (!cartItemsContainer || !cartSummary || !cartEmptyMessage) return;
+
+        const remainingRows = cartItemsContainer.querySelectorAll('.cart-table tbody tr');
+
+        if (remainingRows.length === 0) {
+            // Cart is empty
+            cartItemsContainer.style.display = 'none'; // Hide table area
+            cartSummary.style.display = 'none';      // Hide summary
+            cartEmptyMessage.style.display = 'block'; // Show empty message
+             console.log("Cart is now empty.");
+        } else {
+            // Cart has items
+            cartItemsContainer.style.display = ''; // Ensure table area is visible
+            cartSummary.style.display = '';      // Ensure summary is visible
+            cartEmptyMessage.style.display = 'none'; // Hide empty message
+        }
+    }
+
+    // Initial check in case the cart page loads empty
+    checkIfCartIsEmpty();
+
+}); // End DOMContentLoaded
