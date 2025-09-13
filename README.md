@@ -1,6 +1,7 @@
 # TileCraft
 
 TileCraft – E-Commerce Frontend for Tile Sales
+
 A responsive 5-page e-commerce frontend built with HTML, CSS, JavaScript, and PHP, designed for a tile business. The project simulates a complete shopping flow including product catalog, cart system, and checkout process.
 
 🔹 Features:
