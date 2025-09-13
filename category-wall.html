@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wall Tiles - TileCraft</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="stylesheet.css" />
+</head>
+<body data-category="Wall Tiles">
+
+<header class="site-header">
+  <div class="container header-container">
+    <div class="logo">
+      <a href="index.html">TileCraft</a>
+    </div>
+
+    <nav class="main-navigation" aria-label="Main Navigation">
+      <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+        <span class="sr-only">Menu</span>
+        <i class="fas fa-bars hamburger-icon"></i>
+      </button>
+      <ul id="primary-navigation" class="nav-list">
+        <li class="nav-item dropdown active">
+          <a href="AllTiles.html" class="nav-link">Products <i class="fas fa-chevron-down fa-xs"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="AllTiles.html">All Tiles</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a href="category-floor.html">Floor Tiles</a></li>
+            <li><a href="category-wall.html">Wall Tiles</a></li>
+            <li><a href="category-mosaic.html">Mosaics</a></li>
+            <li><a href="category-outdoor.html">Outdoor</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="inspiration.html" class="nav-link">Inspiration</a></li>
+        <li class="nav-item"><a href="aboutUs.html" class="nav-link">About Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="search-toggle" aria-label="Search"><i class="fas fa-search"></i></button>
+      <a href="account.html" class="action-link" aria-label="My Account"><i class="fas fa-user"></i></a>
+      <a href="cart.html" class="action-link" aria-label="Shopping Cart"><i class="fas fa-shopping-bag"></i><span class="cart-count" aria-hidden="true">0</span></a>
+    </div>
+
+    <div class="search-bar">
+      <form action="/search" method="get">
+        <input type="search" name="query" placeholder="Search tiles..." aria-label="Search tiles" />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</header>
+
+<main>
+  
+  <section class="page-header section-padding bg-medium">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="breadcrumbs">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="AllTiles.html">All Tiles</a></li>
+          <li><span aria-current="page">Wall Tiles</span></li>
+        </ol>
+      </nav>
+      <h1 class="page-title">Wall Tiles</h1>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container">
+      
+      <div class="filter-sort-bar">
+          <p class="product-count">Displaying a selection of Wall tiles</p>
+          <div class="sort-options">
+              <label for="sort-by">Sort by:</label>
+              <select id="sort-by" name="sort-by">
+                  <option value="default">Default sorting</option>
+                  <option value="popularity">Sort by popularity</option>
+                  <option value="low-high">Price: Low to High</option>
+                  <option value="high-low">Price: High to Low</option>
+              </select>
+          </div>
+      </div>
+      
+      <div class="product-grid" id="category-product-grid">
+        <article class="product-card">
+          <a href="productDetails.html?id=14" class="product-link">
+            <img src="images/crystaPearl.webp" alt="Crysta Pearl" class="product-image" />
+            <div class="product-info">
+              <h3 class="product-title">Crysta Pearl</h3>
+              <p class="product-price">$4.55 / sq. ft</p>
+            </div>
+          </a>
+          <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="14">Add to Cart</button>
+        </article>
+
+        <article class="product-card">
+          <a href="productDetails.html?id=5" class="product-link">
+            <img src="images/bottoAlmond.webp" alt="Botto Almond" class="product-image" />
+            <div class="product-info">
+              <h3 class="product-title">Botto Almond</h3>
+              <p class="product-price">$5.00 / sq. ft</p>
+            </div>
+          </a>
+          <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="5">Add to Cart</button>
+        </article>
+
+        <article class="product-card">
+          <a href="productDetails.html?id=17" class="product-link">
+            <img src="images/doveItalia.webp" alt="Dove Italia" class="product-image" />
+            <div class="product-info">
+              <h3 class="product-title">Dove Italia</h3>
+              <p class="product-price">$6.15 / sq. ft</p>
+            </div>
+          </a>
+          <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="17">Add to Cart</button>
+        </article>
+
+        <article class="product-card">
+          <a href="productDetails.html?id=30" class="product-link">
+            <img src="images/pulpisGraphite.webp" alt="Pulpis Graphite" class="product-image" />
+            <div class="product-info">
+              <h3 class="product-title">Pulpis Graphite</h3>
+              <p class="product-price">$6.67 / sq. ft</p>
+            </div>
+          </a>
+          <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="30">Add to Cart</button>
+        </article><article class="product-card">
+          <a href="productDetails.html?id=43" class="product-link">
+            <img src="images/venusBeach.webp" alt="Venus Beach" class="product-image" />
+            <div class="product-info">
+              <h3 class="product-title">Venus Beach</h3>
+              <p class="product-price">$4.11 / sq. ft</p>
+            </div>
+          </a>
+          <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="43">Add to Cart</button>
+        </article>
+
+        <article class="product-card">
+          <a href="productDetails.html?id=33" class="product-link">
+            <img src="images/romaEmpire.webp" alt="Roma Empire" class="product-image" />
+            <div class="product-info">
+              <h3 class="product-title">Roma Empire</h3>
+              <p class="product-price">$5.67 / sq. ft</p>
+            </div>
+          </a>
+          <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="33">Add to Cart</button>
+        </article>
+
+        <article class="product-card">
+          <a href="productDetails.html?id=22" class="product-link">
+            <img src="images/marfigBianco.webp" alt="Marfig Bianco" class="product-image" />
+            <div class="product-info">
+              <h3 class="product-title">Marfig Bianco</h3>
+              <p class="product-price">$7.00 / sq. ft</p>
+            </div>
+          </a>
+          <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="22">Add to Cart</button>
+        </article>
+
+        <article class="product-card">
+          <a href="productDetails.html?id=41" class="product-link">
+            <img src="images/trasoreBeige.webp" alt="Trasore Beige" class="product-image" />
+            <div class="product-info">
+              <h3 class="product-title">Trasore Beige</h3>
+              <p class="product-price">$5.99 / sq. ft</p>
+            </div>
+          </a>
+          <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="41">Add to Cart</button>
+        </article>
+      </div>
+      
+      <div class="text-center view-all-link">
+        <a href="AllTiles.html" class="btn btn-outline">View All Tiles</a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer section-padding">
+  <div class="container footer-container">
+    <div class="footer-column about-column">
+      <h4 class="footer-heading">TileCraft</h4>
+      <p>Your destination for high-quality tiles crafted for beauty and endurance.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-column links-column">
+      <h4 class="footer-heading">Quick Links</h4>
+      <ul class="footer-list">
+        <li><a href="aboutUs.html">About Us</a></li>
+        <li><a href="AllTiles.html">Shop Tiles</a></li>
+        <li><a href="inspiration.html">Inspiration Gallery</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="sell-with-us.html">Sell With Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column links-column">
+      <h4 class="footer-heading">Customer Service</h4>
+      <ul class="footer-list">
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="shipping.html">Shipping & Returns</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms & Conditions</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column newsletter-column">
+      <h4 class="footer-heading">Stay Updated</h4>
+      <p>Get design tips, new arrivals & exclusive offers in your inbox.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" aria-label="Email address" />
+        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="container copyright-container">
+    <p class="copyright-text">© <span id="current-year"></span> TileCraft. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script src="pp33.js"></script>
+</body>
+</html>

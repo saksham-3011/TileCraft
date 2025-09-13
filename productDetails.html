@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="product-page-title">Loading...</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+
+    <!-- TileCraft Stylesheet -->
+    <link rel="stylesheet" href="stylesheet.css">
+
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+     <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">TileCraft</a>
+            </div>
+            <nav class="main-navigation" aria-label="Main Navigation">
+                 <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                     <span class="sr-only">Menu</span>
+                     <i class="fas fa-bars hamburger-icon"></i>
+                 </button>
+                <ul id="primary-navigation" class="nav-list">
+                    <li class="nav-item dropdown">
+                        <a href="AllTiles.html" class="nav-link">Products <i class="fas fa-chevron-down fa-xs"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="AllTiles.html">All Tiles</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="category-floor.html">Floor Tiles</a></li>
+                            <li><a href="category-wall.html">Wall Tiles</a></li>
+                            <li><a href="category-mosaic.html">Mosaics</a></li>
+                            <li><a href="category-outdoor.html">Outdoor</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="inspiration.html" class="nav-link">Inspiration</a></li>
+                    <li class="nav-item"><a href="aboutUs.html" class="nav-link">About Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="search-toggle" aria-label="Search"><i class="fas fa-search"></i></button>
+                <a href="account.html" class="action-link" aria-label="My Account"><i class="fas fa-user"></i></a>
+                <a href="cart.html" class="action-link" aria-label="Shopping Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" aria-hidden="true">0</span>
+                </a>
+            </div>
+            <div class="search-bar">
+                <form action="/search" method="get">
+                    <input type="search" name="query" placeholder="Search tiles..." aria-label="Search tiles"/>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+
+        <!-- Product Page Header -->
+        <section class="page-header section-padding bg-medium">
+            <div class="container">
+                <nav aria-label="breadcrumb" class="breadcrumbs">
+                    <ol>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="AllTiles.html">All Tiles</a></li>
+                        <li><span aria-current="page" id="breadcrumb-product-name">Loading...</span></li>
+                    </ol>
+                </nav>
+                <h1 class="page-title" id="product-name"></h1>
+            </div>
+        </section>
+
+        <!-- Product Details Section -->
+        <section class="product-detail-section section-padding">
+            <div class="container product-detail-container">
+                <div class="product-image-column">
+                    <img id="product-image" src="" alt="Product Image" class="product-image-main">
+                </div>
+                <div class="product-info-column">
+                    <h2 class="product-title" id="product-title"></h2>
+                    <p class="product-price" id="product-price"></p>
+                    
+                    <div class="product-actions">
+                        <div class="quantity-input">
+                            <button class="qty-btn minus" aria-label="Decrease quantity">-</button>
+                            <input type="number" id="product-quantity" value="1" min="1" step="1" aria-label="Quantity in square feet or units">
+                            <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                        </div>
+                        <button class="btn btn-primary add-to-cart-btn" id="add-to-cart-button">Add to Cart</button>
+                    </div>
+
+                    <div class="product-meta">
+                        <h3>Product Details</h3>
+                        <p id="product-description"></p>
+                        <ul>
+                            <li><i class="fas fa-tag"></i> <strong class="meta-label">Category:</strong> <span id="product-category"></span></li>
+                            <li><i class="fas fa-ruler-combined"></i> <strong class="meta-label">Dimensions:</strong> <span id="product-dimensions"></span></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer section-padding">
+        <div class="container footer-container">
+            <div class="footer-column about-column">
+                <h4 class="footer-heading">TileCraft</h4>
+                <p>Your destination for high-quality tiles crafted for beauty and endurance.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            <div class="footer-column links-column">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-list">
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="AllTiles.html">Shop Tiles</a></li>
+                    <li><a href="inspiration.html">Inspiration Gallery</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="sell-with-us.html">Sell With Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column links-column">
+                <h4 class="footer-heading">Customer Service</h4>
+                <ul class="footer-list">
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="shipping.html">Shipping & Returns</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-column newsletter-column">
+                <h4 class="footer-heading">Stay Updated</h4>
+                <p>Get design tips, new arrivals & exclusive offers in your inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" aria-label="Email address"/>
+                    <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="container copyright-container">
+            <p class="copyright-text">© <span id="current-year"></span> TileCraft. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="pp33.js" defer></script>
+</body>
+</html>

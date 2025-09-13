@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Contact Us - TileCraft</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+
+    <link rel="stylesheet" href="stylesheet.css" />
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-container">
+        <div class="logo">
+            <a href="index.html">TileCraft</a>
+        </div>
+        <nav class="main-navigation" aria-label="Main Navigation">
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <i class="fas fa-bars hamburger-icon"></i>
+            </button>
+            <ul id="primary-navigation" class="nav-list">
+                <li class="nav-item dropdown">
+                    <a href="AllTiles.html" class="nav-link">Products <i class="fas fa-chevron-down fa-xs"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="AllTiles.html">All Tiles</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a href="category-floor.html">Floor Tiles</a></li>
+                        <li><a href="category-wall.html">Wall Tiles</a></li>
+                        <li><a href="category-mosaic.html">Mosaics</a></li>
+                        <li><a href="category-outdoor.html">Outdoor</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="inspiration.html" class="nav-link">Inspiration</a></li>
+                <li class="nav-item"><a href="aboutUs.html" class="nav-link">About Us</a></li>
+                </ul>
+        </nav>
+        <div class="header-actions">
+            <button class="search-toggle" aria-label="Search"><i class="fas fa-search"></i></button>
+            <a href="account.html" class="action-link" aria-label="My Account"><i class="fas fa-user"></i></a>
+            <a href="cart.html" class="action-link" aria-label="Shopping Cart"><i class="fas fa-shopping-bag"></i><span class="cart-count" aria-hidden="true">0</span></a>
+        </div>
+        <div class="search-bar">
+            <form action="/search" method="get">
+                <input type="search" name="query" placeholder="Search tiles..." aria-label="Search tiles" />
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="page-header section-padding bg-medium">
+        <div class="container">
+            <nav aria-label="breadcrumb" class="breadcrumbs">
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li><span aria-current="page">Contact Us</span></li>
+                </ol>
+            </nav>
+            <h1 class="page-title">Contact Us</h1>
+        </div>
+    </section>
+
+    <section class="contact-page-section section-padding">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-details">
+                    <h2 class="section-title">Get in Touch</h2>
+                    <p>We'd love to hear from you! Whether you have a question about our products, pricing, or anything else, our team is ready to answer all your questions.</p>
+                    
+                    <ul class="contact-info-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Main Office Address:</strong>
+                                <p>123 TileCraft Avenue, Design District, Saket, New Delhi, 110017, India</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <strong>Phone Number:</strong>
+                                <p><a href="tel:+914412345678">+91 (44) 1234 5678</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp"></i>
+                             <div>
+                                <strong>WhatsApp:</strong>
+                                <p><a href="https://wa.me/919876543210" target="_blank">+91 98765 43210</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email Address:</strong>
+                                <p><a href="mailto:contact@tilecraft.com">contact@tilecraft.com</a></p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h3 class="social-title">Follow Us</h3>
+                    <div class="social-links-contact">
+                        <a href="#" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="X (formerly Twitter)" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h2 class="section-title">Send Us a Message</h2>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="map-section">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224056.60146362092!2d77.01240376010636!3d28.5355161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce38b8e2b7f0f%3A0x30b8ec0935528c74!2sSaket%2C%20New%20Delhi%2C%20Delhi%20110017%2C%20India!5e0!3m2!1sen!2sin!4v1668882222111!5m2!1sen!2sin"
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </section>
+
+</main>
+
+<footer class="site-footer section-padding">
+  <div class="container footer-container">
+    <div class="footer-column about-column">
+      <h4 class="footer-heading">TileCraft</h4>
+      <p>Your destination for high-quality tiles crafted for beauty and endurance.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-column links-column">
+      <h4 class="footer-heading">Quick Links</h4>
+      <ul class="footer-list">
+        <li><a href="aboutUs.html">About Us</a></li>
+        <li><a href="AllTiles.html">Shop Tiles</a></li>
+        <li><a href="inspiration.html">Inspiration Gallery</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column links-column">
+      <h4 class="footer-heading">Customer Service</h4>
+      <ul class="footer-list">
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="shipping.html">Shipping & Returns</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms & Conditions</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column newsletter-column">
+      <h4 class="footer-heading">Stay Updated</h4>
+      <p>Get design tips, new arrivals & exclusive offers in your inbox.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" aria-label="Email address" />
+        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="container copyright-container">
+    <p class="copyright-text">© <span id="current-year"></span> TileCraft. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script src="pp33.js"></script>
+
+</body>
+</html>

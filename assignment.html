@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - TileCraft</title> <!-- Changed Title -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+
+    <!-- TileCraft Stylesheet -->
+    <link rel="stylesheet" href="stylesheet.css"> <!-- Ensure this path is correct -->
+
+</head>
+<body>
+
+    <!-- ============================================= -->
+    <!-- HEADER & NAVIGATION (TILE CRAFT VERSION)    -->
+    <!-- ============================================= -->
+     <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">TileCraft</a> <!-- TileCraft Logo Text -->
+            </div>
+            <nav class="main-navigation" aria-label="Main Navigation">
+                 <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                     <span class="sr-only">Menu</span>
+                     <i class="fas fa-bars hamburger-icon"></i>
+                 </button>
+                <ul id="primary-navigation" class="nav-list">
+                    <li class="nav-item dropdown">
+                        <a href="shop-all.html" class="nav-link">Products <i class="fas fa-chevron-down fa-xs"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="shop-all.html">All Tiles</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="category-floor.html">Floor Tiles</a></li>
+                            <li><a href="category-wall.html">Wall Tiles</a></li>
+                            <li><a href="category-mosaic.html">Mosaics</a></li>
+                            <li><a href="category-outdoor.html">Outdoor</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="inspiration.html" class="nav-link">Inspiration</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="search-toggle" aria-label="Search"><i class="fas fa-search"></i></button>
+                <a href="account.html" class="action-link active" aria-label="My Account"><i class="fas fa-user"></i></a> <!-- Added 'active' -->
+                <a href="cart.html" class="action-link" aria-label="Shopping Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" aria-hidden="true">0</span> <!-- Example Count -->
+                </a>
+            </div>
+            <div class="search-bar">
+                <form action="/search" method="get">
+                    <input type="search" name="query" placeholder="Search tiles..." aria-label="Search tiles"/>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </header>
+    <!-- ============================================= -->
+    <!-- END OF HEADER & NAVIGATION                   -->
+    <!-- ============================================= -->
+
+
+    <!-- ============================================= -->
+    <!-- MAIN CONTENT AREA                             -->
+    <!-- ============================================= -->
+    <main>
+
+        <!-- ============================================= -->
+        <!-- BREADCRUMBS & TITLE                         -->
+        <!-- ============================================= -->
+        <section class="page-header section-padding bg-medium">
+            <div class="container">
+                <nav aria-label="breadcrumb" class="breadcrumbs">
+                    <ol>
+                        <li><a href="index.html">Home</a></li>
+                        <li><span aria-current="page">My Account</span></li>
+                    </ol>
+                </nav>
+                <h1 class="page-title">My Account</h1>
+            </div>
+        </section>
+        <!-- ============================================= -->
+        <!-- END OF BREADCRUMBS & TITLE                  -->
+        <!-- ============================================= -->
+
+
+        <!-- ============================================= -->
+        <!-- ACCOUNT AREA                                -->
+        <!-- ============================================= -->
+        <section class="account-section section-padding">
+            <div class="container">
+                <div class="account-container">
+
+                    <!-- Account Navigation -->
+                    <aside class="account-navigation">
+                        <h3 class="account-nav-title">Navigation</h3>
+                        <ul>
+                            <!-- JS will add 'active' class based on current page -->
+                            <li><a href="index.html" class="account-nav-link">Dashboard</a></li>
+                            <li><a href="account-orders.html" class="account-nav-link">Orders</a></li>
+                            <li><a href="account-details.html" class="account-nav-link">Account Details</a></li>
+                            <li><a href="account-addresses.html" class="account-nav-link">Addresses</a></li>
+                            <li><a href="logout.php" class="account-nav-link">Logout</a></li> <!-- Assuming a logout endpoint -->
+                        </ul>
+                    </aside>
+
+                    <!-- Account Content -->
+                    <section class="account-content">
+                        <!-- Dashboard Panel (Default View) -->
+                        <div class="account-panel" id="dashboard">
+                            <h2 class="account-panel-title">Dashboard</h2>
+                            <p>Hello <strong>Customer Name</strong> (not Customer Name? <a href="logout.php">Log out</a>)</p>
+                            <p>From your account dashboard you can view your <a href="account-orders.html">recent orders</a>, manage your <a href="account-addresses.html">shipping and billing addresses</a>, and <a href="account-details.html">edit your password and account details</a>.</p>
+
+                             <div class="dashboard-summary">
+                                <h3>Recent Activity</h3>
+                                <!-- Example: Could list last order or link -->
+                                <p>You haven't placed any orders recently. <a href="shop-all.html">Start shopping!</a></p>
+                                <!-- Or if orders exist: -->
+                                <!-- <p>Your last order #12345 was placed on [Date]. <a href="account-orders.html">View Order</a></p> -->
+                            </div>
+                        </div>
+
+                        <!-- Other panels (Orders, Details, Addresses) would typically be on separate pages -->
+                        <!-- linked from the navigation, like account-orders.html etc. -->
+                        <!-- Or you could use JS to show/hide panels on this single page -->
+
+                    </section> <!-- End account-content -->
+
+                </div> <!-- End account-container -->
+            </div>
+        </section>
+        <!-- ============================================= -->
+        <!-- END OF ACCOUNT AREA                         -->
+        <!-- ============================================= -->
+
+
+    </main>
+    <!-- ============================================= -->
+    <!-- END OF MAIN CONTENT AREA                      -->
+    <!-- ============================================= -->
+
+
+    <!-- ============================================= -->
+    <!-- FOOTER SECTION (TILE CRAFT VERSION)         -->
+    <!-- ============================================= -->
+    <footer class="site-footer section-padding">
+        <div class="container footer-container">
+            <div class="footer-column about-column">
+                <h4 class="footer-heading">TileCraft</h4>
+                <p>Your destination for high-quality tiles crafted for beauty and endurance.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            <div class="footer-column links-column">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-list">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="shop-all.html">Shop Tiles</a></li>
+                    <li><a href="inspiration.html">Inspiration Gallery</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="sell-with-us.html">Sell With Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column links-column">
+                <h4 class="footer-heading">Customer Service</h4>
+                <ul class="footer-list">
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="shipping.html">Shipping & Returns</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-column newsletter-column">
+                <h4 class="footer-heading">Stay Updated</h4>
+                <p>Get design tips, new arrivals & exclusive offers in your inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" aria-label="Email address"/>
+                    <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="container copyright-container">
+            <p class="copyright-text">© <span id="current-year"></span> TileCraft. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- ============================================= -->
+    <!-- END OF FOOTER SECTION                         -->
+    <!-- ============================================= -->
+
+    <!-- Link TileCraft JS -->
+    <script src="pp33.js" defer></script> <!-- Ensure this path is correct -->
+
+</body>
+</html>

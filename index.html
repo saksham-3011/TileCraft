@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TileCraft - Premium Designer Tiles for Every Space</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="stylesheet.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-container">
+    <div class="logo">
+      <a href="index.html">TileCraft</a>
+    </div>
+
+    <nav class="main-navigation" aria-label="Main Navigation">
+      <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+        <span class="sr-only">Menu</span>
+        <i class="fas fa-bars hamburger-icon"></i>
+      </button>
+      <ul id="primary-navigation" class="nav-list">
+        <li class="nav-item dropdown active">
+          <a href="AllTiles.html" class="nav-link">Products <i class="fas fa-chevron-down fa-xs"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="AllTiles.html">All Tiles</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a href="category-floor.html">Floor Tiles</a></li>
+            <li><a href="category-wall.html">Wall Tiles</a></li>
+            <li><a href="category-mosaic.html">Mosaics</a></li>
+            <li><a href="category-outdoor.html">Outdoor</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="inspiration.html" class="nav-link">Inspiration</a></li>
+        <li class="nav-item"><a href="aboutUs.html" class="nav-link">About Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="search-toggle" aria-label="Search"><i class="fas fa-search"></i></button>
+      <a href="account.html" class="action-link" aria-label="My Account"><i class="fas fa-user"></i></a>
+      <a href="cart.html" class="action-link" aria-label="Shopping Cart"><i class="fas fa-shopping-bag"></i><span class="cart-count" aria-hidden="true">0</span></a>
+    </div>
+
+    <div class="search-bar">
+      <form action="/search" method="get">
+        <input type="search" name="query" placeholder="Search tiles..." aria-label="Search tiles" />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/hero.jpg');">
+  <div class="container hero-content">
+    <h1>Transform Your Space with Timeless Tiles</h1>
+    <p>Browse our curated collection of designer tiles — perfect for floors, walls, kitchens, and beyond.</p>
+    <a href="AllTiles.html" class="btn btn-primary btn-lg">Shop All Tiles</a>
+  </div>
+  </section>
+
+  <section class="key-features section-padding">
+    <div class="container feature-grid">
+      <div class="feature-card">
+        <i class="fas fa-shipping-fast icon"></i>
+        <h3>Fast Shipping</h3>
+        <p>Get your tiles delivered right to your doorstep, fast and secure.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-palette icon"></i>
+        <h3>Endless Variety</h3>
+        <p>Explore a vast selection of styles, colors, and finishes to fit any design.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-award icon"></i>
+        <h3>Premium Quality</h3>
+        <p>Crafted from durable materials for beauty that lasts a lifetime.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-medium">
+    <div class="container">
+
+        <h2 class="section-title text-center">Design Inspiration</h2>
+        <p class="section-subtitle text-center">See what's possible with our collection and find the perfect look for your project.</p>
+        
+        <div class="inspiration-grid">
+            <a href="inspiration.html" class="inspiration-card">
+                <img src="images/modernLiving.webp" alt="Living Room with Mosaic Accent Wall" loading="lazy">
+                <div class="inspiration-overlay">
+                    <h3 class="inspiration-title">Mosaic Accent Wall</h3>
+                    <p class="inspiration-caption">A vibrant mosaic feature wall adds a splash of color and personality.</p>
+                </div>
+            </a>
+
+            <a href="inspiration.html" class="inspiration-card">
+                <img src="images/modernRustic.jpg" alt="Rustic Outdoor Tiling" loading="lazy">
+                <div class="inspiration-overlay">
+                    <h3 class="inspiration-title">Rustic Outdoor Living</h3>
+                    <p class="inspiration-caption">Warm, earth-toned tiles blend seamlessly with nature.</p>
+                </div>
+            </a>
+
+            <a href="inspiration.html" class="inspiration-card">
+                <img src="images/modernBathroom.webp" alt="Luxury Bathroom with Marble Walls" loading="lazy">
+                <div class="inspiration-overlay">
+                    <h3 class="inspiration-title">Luxury Bathrooms</h3>
+                    <p class="inspiration-caption">Large-format marble tiles create a seamless and opulent feel.</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="text-center view-all-link">
+            <a href="inspiration.html" class="btn btn-outline">View Full Gallery</a>
+        </div>
+
+    </div>
+</section>
+
+  <section class="categories-showcase section-padding bg-medium">
+    <div class="container">
+      <h2 class="section-title text-center">Shop by Category</h2>
+      <div class="category-grid">
+        <a href="category-floor.html" class="category-card">
+          <img src="images/cardoThunder.webp" alt="Floor Tiles" />
+          <h3>Floor Tiles</h3>
+        </a>
+        <a href="category-wall.html" class="category-card">
+          <img src="images/trasoreBeige.webp" alt="Wall Tiles" />
+          <h3>Wall Tiles</h3>
+        </a>
+        <a href="category-mosaic.html" class="category-card">
+          <img src="images/onegaSilver.webp" alt="Mosaics" />
+          <h3>Mosaics</h3>
+        </a>
+        <a href="category-outdoor.html" class="category-card">
+          <img src="images/brickRed.webp" alt="Outdoor Tiles" />
+          <h3>Outdoor Tiles</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured-products section-padding">
+    <div class="container">
+      <h2 class="section-title text-center">New Arrivals</h2>
+      <div class="product-grid">
+
+        <article class="product-card">
+          <a href="productDetails.html" class="product-link">
+            <img src="images/antiqueBlack.jpg" alt="Antique Black Marble Tile" class="product-image" />
+            <div class="product-info">
+              <h3 class="product-title">Antique Black Marble</h3>
+              <p class="product-price">$5.10 / sq. ft</p>
+            </div>
+          </a>
+          <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="2">Add to Cart</button>
+        </article>
+
+        <article class="product-card">
+          <a href="productDetails.html?id=28" class="product-link">
+            <img src="images/onyxViola.webp" alt="Onyx Viola" class="product-image" />
+            <div class="product-info">
+              <h3 class="product-title">Onyx Viola</h3>
+              <p class="product-price">$9.00 / sq. ft</p>
+            </div>
+          </a>
+          <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="28">Add to Cart</button>
+        </article>
+        
+        <article class="product-card">
+            <a href="productDetails.html" class="product-link">
+              <img src="images/redMarble.jpg" alt="Red Marble Rosso Levanto" class="product-image" />
+              <div class="product-info">
+                <h3 class="product-title">Red Marble Levanto</h3>
+                <p class="product-price">$4.66 / sq. ft</p>
+              </div>
+            </a>
+            <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="32">Add to Cart</button>
+          </article>
+
+        <article class="product-card">
+          <a href="productDetails.html" class="product-link">
+            <img src="images/greenMarble.jpg" alt="Green Marble Verde Aqua" class="product-image" />
+            <div class="product-info">
+              <h3 class="product-title">Green Marble Verde</h3>
+              <p class="product-price">$2.80 / sq. ft</p>
+            </div>
+          </a>
+          <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="19">Add to Cart</button>
+        </article>
+
+        <article class="product-card">
+            <a href="productDetails.html" class="product-link">
+              <img src="images/glossyWhite.jpg" alt="Glossy White Subway Tile" class="product-image" />
+              <div class="product-info">
+                <h3 class="product-title">Glossy White Subway </h3>
+                <p class="product-price">$2.80 / sq. ft</p>
+              </div>
+            </a>
+            <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="18">Add to Cart</button>
+          </article>
+
+        <article class="product-card">
+          <a href="productDetails.html" class="product-link">
+            <img src="images/outdoorTextured.jpg" alt="Outdoor Textured Stone" class="product-image" />
+            <div class="product-info">
+              <h3 class="product-title">Outdoor Textured Stone</h3>
+              <p class="product-price">$4.25 / sq. ft</p>
+            </div>
+          </a>
+          <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="29">Add to Cart</button>
+        </article>
+
+        <article class="product-card">
+          <a href="productDetails.html?id=46" class="product-link">
+            <img src="images/rusticStone.webp" alt="Rustic Stone Grey" class="product-image" />
+            <div class="product-info">
+              <h3 class="product-title">Rustic Stone Grey</h3>
+              <p class="product-price">$5.33 / sq. ft</p>
+            </div>
+          </a>
+          <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="46">Add to Cart</button>
+        </article>
+
+        <article class="product-card">
+          <a href="productDetails.html?id=17" class="product-link">
+            <img src="images/doveItalia.webp" alt="Dove Italia" class="product-image" />
+            <div class="product-info">
+              <h3 class="product-title">Dove Italia</h3>
+              <p class="product-price">$6.15 / sq. ft</p>
+            </div>
+          </a>
+          <button class="btn btn-secondary btn-sm add-to-cart-btn" data-product-id="17">Add to Cart</button>
+        </article>
+
+      </div>
+      <div class="text-center view-all-link">
+        <a href="AllTiles.html" class="btn btn-outline">View All Tiles</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mission-spotlight section-padding bg-medium">
+    <div class="container mission-container">
+      <div class="mission-image">
+        <img src="images/tiledInterior.jpeg" alt="Beautiful tiled interior" />
+      </div>
+      <div class="mission-text">
+        <h2 class="section-title">Design. Quality. Durability.</h2>
+        <p>At TileCraft, we bring you premium tiles that combine style and strength — perfect for modern interiors, commercial projects, and home makeovers.</p>
+        <p>Explore textures, colors, and finishes that transform spaces.</p>
+        <a href="aboutUs.html" class="btn btn-primary">Learn More About Us</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer section-padding">
+  <div class="container footer-container">
+    <div class="footer-column about-column">
+      <h4 class="footer-heading">TileCraft</h4>
+      <p>Your destination for high-quality tiles crafted for beauty and endurance.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-column links-column">
+      <h4 class="footer-heading">Quick Links</h4>
+      <ul class="footer-list">
+        <li><a href="aboutUs.html">About Us</a></li>
+        <li><a href="AllTiles.html">Shop Tiles</a></li>
+        <li><a href="inspiration.html">Inspiration Gallery</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column links-column">
+      <h4 class="footer-heading">Customer Service</h4>
+      <ul class="footer-list">
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="shipping.html">Shipping & Returns</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms & Conditions</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column newsletter-column">
+      <h4 class="footer-heading">Stay Updated</h4>
+      <p>Get design tips, new arrivals & exclusive offers in your inbox.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" aria-label="Email address" />
+        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="container copyright-container">
+    <p class="copyright-text">© <span id="current-year"></span> TileCraft. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script src="pp33.js"></script>
+</body>
+</html>
+
+
+
